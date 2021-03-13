@@ -28,15 +28,23 @@ namespace WindowsFormsApp1
             panel.Height = 337;
             panel.BackColor = System.Drawing.Color.LightGray;
             this.Controls.Add(panel);
-
         }
 
-        private static void ClickButtonEventForm2(object sender, ModifiedEventArgs modifiedEventArgs)
+        private void ClickButtonEventForm2(object sender, ModifiedEventArgs modifiedEventArgs)
         {
             Graphics g = panel.CreateGraphics();
             SolidBrush brush = new SolidBrush(Color.LightGray);
             g.FillRectangle(brush,0,0,590,337);
             brush = new SolidBrush(Color.Red);
+            int[] coord = {
+                modifiedEventArgs.XLeftUp,
+                modifiedEventArgs.YLeftUp,
+                modifiedEventArgs.XRightDown,
+                modifiedEventArgs.YRightDown
+            };
+            var texts = coord.Select(x => x);
+            Text = "Main Form ";
+            Text += string.Join(" ", texts);
             g.FillRectangle(brush,
                 modifiedEventArgs.XLeftUp,
                 modifiedEventArgs.YLeftUp,

@@ -23,6 +23,7 @@ namespace WindowsFormsApp1
             radioButton2.Enabled = false;
             button2.Enabled = false;
             button1.Enabled = false;
+            Text = "Форма для подписки";
             eventClass.events += new EventClass.EventButtonClickHandler(ClickButtonEventForm4);
         }
 
